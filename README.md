@@ -1,13 +1,19 @@
 # Way-Provider ↯
 
 ## Context Provider for webcomponents
-#### No more prop drilling in webcomponents ⛏
+#### ⛏ No more prop drilling in webcomponents 
 <p style="padding-left:12px">
   This webcomponents will pass context as props in child webcomponents. <br>
   useWayContext has one parameter, a referance to component you want context in. <br>
   Provider will append context as attributes. <br>
   For now it only support shallow object as context, so no object in context.
 </p>
+
+##### 📝 Props:
+  - ##### context: object
+  - ##### all: boolean
+
+<p>⚡️ When using <b><mark>all<mark></b> prop you don't need useWayContext, all the webcomponents in the tree will be initalized with those props</p>
 
 #### Step 1:
 <p>Wrap your components with provider</p>
