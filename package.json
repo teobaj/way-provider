@@ -24,5 +24,6 @@
     "vite",
     "context",
     "provider"
-  ]
+  ],
+  "license": "MIT"
 }
