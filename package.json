@@ -16,5 +16,13 @@
   "devDependencies": {
     "vite": "^2.9.0",
     "typescript": "^4.5.4"
-  }
+  },
+  "keywords": [
+    "webcomponents",
+    "customelements",
+    "lit",
+    "vite",
+    "context",
+    "provider"
+  ]
 }
