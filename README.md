@@ -76,4 +76,4 @@ connectedCallback(){
 
 ---
 
-<b> Build using Lit and Vite </b>
+<b> Built using Lit and Vite </b>
