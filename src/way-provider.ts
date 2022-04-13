@@ -16,9 +16,13 @@ export class WayProvider extends LitElement {
   @property({type: Object})
   context: object = {}
 
+
+  private observer
+
   isCustomElement(elTagName: string){
     return !!customElements.get(elTagName);
   }
+  
 
   getAllWebcomponents(wcList: Element[]): Element[]{
     let wcs: Element[] = []
@@ -43,9 +47,24 @@ export class WayProvider extends LitElement {
     window["__wayProvider"].context = this.context;
 
     if(this.all){
+      const config = { childList: true, subtree: true };
       let webcomponents = [...Array.from(this.children).filter(el => this.isCustomElement(el.tagName.toLowerCase())), ...this.getAllWebcomponents(Array.from(this.children))]
       this.applyProps(webcomponents, this.context);
+      this.observer = new MutationObserver(this.mutationCallback.bind(this))
+      this.observer.observe(this, config)
     }
+  }
+
+  mutationCallback(list: any, observer: MutationObserver){
+    list.forEach(mutation => {
+      if(mutation.target){
+        let wcs = this.getAllWebcomponents([mutation.target])
+        this.applyProps(wcs, this.context)
+      }
+    })
+  }
+  disconnectedCallback(): void {
+    this.observer.disconnect();
   }
   
     

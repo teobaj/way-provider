@@ -24,6 +24,13 @@ export class TestComponent extends LitElement {
   @property()
   name = 'World'
 
+  connectedCallback(): void {
+    super.connectedCallback()
+    setTimeout(() => {
+      this.name = "TIMEOUT"
+    }, 7000)
+  }
+
   render() {
     return html`
       <h1>Hello, ${this.name}!</h1>

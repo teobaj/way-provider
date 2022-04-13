@@ -65,7 +65,7 @@ connectedCallback(){
   export let name
 ```
 
----x
+---
   This library is not using default customElement decorator so don't worry if it's imported multiple times, the way-provider will not throw an error and will be defined just once.
 
 ---

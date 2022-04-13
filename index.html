@@ -11,9 +11,9 @@
   </head>
   <body>
     
-    <way-provider context='{"name":"teo"}'>
+    <way-provider all context='{"name":"teo"}'>
       <test-component name="iisus">
-        <test-component name="iijos">
+        <test-component id="deep" name="iijos">
 
         </test-component>
       </test-component>
@@ -29,3 +29,11 @@
     color: red;
   }
 </style>
+
+<script>
+  setTimeout(() => {
+    let newEl = document.createElement('test-component');
+    let x = document.getElementById('deep')
+    x.appendChild(newEl)
+  }, 3000)
+</script>
