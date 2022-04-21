@@ -11,6 +11,7 @@ export declare class TestComponent extends LitElement {
      * The name to say "Hello" to.
      */
     name: string;
+    connectedCallback(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

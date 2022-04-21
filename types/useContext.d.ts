@@ -1,1 +1,1 @@
-export declare const useWayContext: (component: Element) => void;
+export declare const useWayContext: (part?: string) => any;

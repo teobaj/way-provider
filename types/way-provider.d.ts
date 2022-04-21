@@ -8,10 +8,13 @@ import { LitElement } from 'lit';
 export declare class WayProvider extends LitElement {
     all: boolean;
     context: object;
+    private observer;
     isCustomElement(elTagName: string): boolean;
     getAllWebcomponents(wcList: Element[]): Element[];
     applyProps(elements: Element[], context: object): void;
     connectedCallback(): void;
+    mutationCallback(list: any, observer: MutationObserver): void;
+    disconnectedCallback(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
