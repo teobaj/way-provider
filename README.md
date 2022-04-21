@@ -4,7 +4,7 @@
 #### ⛏ No more prop drilling in webcomponents 
 <p style="padding-left:12px">
   This webcomponents will pass context as props in child webcomponents. <br>
-  useWayContext has one parameter, a referance to component you want context in. <br>
+  attachWayContext has one parameter, a referance to component you want context in. <br>
   Provider will append context as attributes. <br>
   For now it only support shallow object as context, so no object in context.
 </p>
@@ -15,7 +15,7 @@
   - ##### context: object
   - ##### all: boolean
 
-<p>⚡️ When using <b><mark>all<mark></b> prop you don't need useWayContext, all the webcomponents in the tree will be initalized with those props</p>
+<p>⚡️ When using <b><mark>all<mark></b> prop you don't need attachWayContext, all the webcomponents in the tree will be initalized with those props</p>
 
 #### Step 1:
 <p>Wrap your components with provider</p>
@@ -33,11 +33,11 @@ import 'way-provider';
 <p>Initalize context in your webcomponent child</p>
 
 ``` typescript
-import { useWayContext } from 'way-provider';
+import { attachWayContext } from 'way-provider';
 
 ...
 connectedCallback(){
-  useWayContext(this)
+  attachWayContext(this)
 }
 ```
 
@@ -46,7 +46,7 @@ connectedCallback(){
 ```ts
   thisCmp = get_current_component()
 
-  onMount(() => useWayContext(thisCmp))
+  onMount(() => attachWayContext(thisCmp))
 ```
 
 #### Step 3:

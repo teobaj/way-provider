@@ -1,5 +1,7 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { attachWayContext } from './attachContext'
+import { useWayContext } from './useContext'
 
 /**
  * An example element.
@@ -26,6 +28,8 @@ export class TestComponent extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback()
+    console.log(useWayContext())
+    attachWayContext(this)
     setTimeout(() => {
       this.name = "TIMEOUT"
     }, 7000)

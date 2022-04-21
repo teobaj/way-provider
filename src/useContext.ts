@@ -1,10 +1,5 @@
-export const useWayContext = (component: Element) => {
-  let context = window['__wayProvider'].context || {}
-  console.log(context)
-  Object.entries(context).forEach(([key,value]) => {
-    console.log('===', component, key, value)
-
-    component.setAttribute(key, value as any)
-  })
+export const useWayContext = (part?: string) => {
+  let context = window['__wayProvider']?.context || {}
+  if(part) return context[part]
+  return context;
 }
-
